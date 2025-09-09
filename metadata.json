@@ -1,0 +1,5 @@
+{
+  "name": "Block Bloom Puzzle",
+  "description": "Un cautivador juego de puzles de bloques donde colocas piezas para eliminar líneas. Arrastra las formas al tablero, completa filas o columnas para hacerlas detonables, y presiona 'Eliminar Línea' para limpiarlas y ganar puntos. Usa 'Barajar' cuando te quedes sin movimientos para obtener nuevas piezas y seguir jugando.",
+  "requestFramePermissions": []
+}
