@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bloom-block-v8'; // Incremented version to force update
+const CACHE_NAME = 'bloom-block-v17-final-structure-fix'; // Incremented version to force update
 const urlsToCache = [
   './',
   './index.html',
@@ -20,40 +20,36 @@ const urlsToCache = [
   './icon-192.png',
   './icon-512.png',
   'https://cdn.tailwindcss.com',
-  // NEW: Cache React and Babel scripts
   'https://unpkg.com/react@18.2.0/umd/react.production.min.js',
   'https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js',
   'https://unpkg.com/@babel/standalone@7.12.4/babel.min.js'
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting(); // Force the waiting service worker to become the active service worker.
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache');
-        // We use relative paths now, so we need to fetch them relative to the service worker's origin
-        const cachePromises = urlsToCache.map(url => {
-            // For external URLs, fetch them as is. For local URLs, construct the full path if needed.
-            // In this setup, relative paths from root work correctly.
-            return cache.add(new Request(url, {cache: 'reload'}));
-        });
-        return Promise.all(cachePromises);
+        console.log('Opened cache and caching files');
+        return cache.addAll(urlsToCache.map(url => new Request(url, { cache: 'reload' })));
       })
   );
 });
 
 self.addEventListener('fetch', event => {
-  // We don't want to cache AdSense scripts
-  if (event.request.url.includes('google')) {
+  // We don't want to cache AdSense scripts or other external resources that might change
+  if (event.request.url.includes('google') || event.request.url.includes('ad')) {
     return;
   }
   
   event.respondWith(
     caches.match(event.request)
       .then(response => {
+        // Cache hit - return response
         if (response) {
           return response;
         }
+        // Not in cache - fetch from network
         return fetch(event.request);
       }
     )
@@ -72,6 +68,6 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Take control of all clients as soon as the SW is activated.
   );
 });
