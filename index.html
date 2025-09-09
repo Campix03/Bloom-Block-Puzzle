@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Block Bloom Puzzle</title>
-    
-    <!-- PWA Manifest and Theme -->
-    <link rel="manifest" href="./manifest.json" />
-    <meta name="theme-color" content="#4f46e5" />
-    <link rel="icon" type="image/png" href="./icon-192.png" />
-    <link rel="apple-touch-icon" href="./icon-192.png">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom Block Puzzle</title>
+  <link rel="manifest" href="./public/manifest.json" />
+  <link rel="icon" href="./public/icon-192.png" type="image/png" />
+  <meta name="theme-color" content="#4f46e5" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-  <script type="importmap">
+  <!-- React and ReactDOM (Production versions) -->
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+  
+  <!-- Babel Standalone for live JSX/TSX transpilation -->
+  <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.min.js" crossorigin></script>
+
+  <!-- Google AdSense for H5 Games Script -->
+  <!-- TODO: Reemplaza 'ca-pub-0000000000000000' con tu ID de editor de AdSense real -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+
+<script type="importmap">
 {
   "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1"
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
   }
 }
 </script>
-    <!-- TODO: Reemplaza 'ca-pub-0000000000000000' con tu ID de editor de AdSense real -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <noscript>Necesitas habilitar JavaScript para ejecutar esta aplicación.</noscript>
-    <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
-  <script type="module" src="/index.tsx"></script>
+<body>
+  <noscript>Necesitas habilitar JavaScript para jugar este juego.</noscript>
+  <div id="root"></div>
+
+  <!-- Load the main app script using Babel -->
+  <!-- Babel will find this script and transpile it before execution -->
+  <script type="text/babel" data-type="module" src="./index.tsx"></script>
 </body>
 </html>
