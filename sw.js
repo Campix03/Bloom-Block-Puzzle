@@ -1,22 +1,22 @@
-const CACHE_NAME = 'bloom-block-v17-final-structure-fix'; // Incremented version to force update
+onst CACHE_NAME = 'bloom-block-v18-final-fix'; // Incremented version to force update
 const urlsToCache = [
-  './',
-  './index.html',
-  './index.tsx',
-  './App.tsx',
-  './types.ts',
-  './constants.ts',
-  './hooks/useGameLogic.ts',
-  './hooks/useAds.ts',
-  './components/StartScreen.tsx',
-  './components/Game.tsx',
-  './components/GameBoard.tsx',
-  './components/PiecePreview.tsx',
-  './components/InfoPanel.tsx',
-  './components/Controls.tsx',
-  './components/MessageBox.tsx',
-  './components/AdBanner.tsx',
-  './manifest.json',
+  '../', // Go up one level to cache from the root
+  '../index.html',
+  '../index.tsx',
+  '../App.tsx',
+  '../types.ts',
+  '../constants.ts',
+  '../hooks/useGameLogic.ts',
+  '../hooks/useAds.ts',
+  '../components/StartScreen.tsx',
+  '../components/Game.tsx',
+  '../components/GameBoard.tsx',
+  '../components/PiecePreview.tsx',
+  '../components/InfoPanel.tsx',
+  '../components/Controls.tsx',
+  '../components/MessageBox.tsx',
+  '../components/AdBanner.tsx',
+  './manifest.json', // These are relative to the sw.js file
   './icon-192.png',
   './icon-512.png',
   'https://cdn.tailwindcss.com',
@@ -33,6 +33,7 @@ self.addEventListener('install', event => {
         console.log('Opened cache and caching files');
         return cache.addAll(urlsToCache.map(url => new Request(url, { cache: 'reload' })));
       })
+      .catch(err => console.error('Cache addAll failed:', err))
   );
 });
 

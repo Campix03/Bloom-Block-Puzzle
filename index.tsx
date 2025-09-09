@@ -5,8 +5,8 @@ import App from './App';
 // Register the service worker for PWA functionality
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    // Corrected the path to the service worker file for production deployment
-    navigator.serviceWorker.register('./sw.js').then(registration => {
+    // Corrected the path to the service worker file, pointing to the public directory
+    navigator.serviceWorker.register('./public/sw.js').then(registration => {
       console.log('Service Worker registered with scope:', registration.scope);
     }).catch(error => {
       console.error('Service Worker registration failed:', error);
