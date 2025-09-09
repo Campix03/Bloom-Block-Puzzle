@@ -1,24 +1,24 @@
-onst CACHE_NAME = 'bloom-block-v18-final-fix'; // Incremented version to force update
+const CACHE_NAME = 'bloom-block-v23-final-structure-fix'; // Incremented version to force update
 const urlsToCache = [
-  '../', // Go up one level to cache from the root
-  '../index.html',
-  '../index.tsx',
-  '../App.tsx',
-  '../types.ts',
-  '../constants.ts',
-  '../hooks/useGameLogic.ts',
-  '../hooks/useAds.ts',
-  '../components/StartScreen.tsx',
-  '../components/Game.tsx',
-  '../components/GameBoard.tsx',
-  '../components/PiecePreview.tsx',
-  '../components/InfoPanel.tsx',
-  '../components/Controls.tsx',
-  '../components/MessageBox.tsx',
-  '../components/AdBanner.tsx',
-  './manifest.json', // These are relative to the sw.js file
-  './icon-192.png',
-  './icon-512.png',
+  './', // Cache the root
+  './index.html',
+  './index.tsx',
+  './App.tsx',
+  './types.ts',
+  './constants.ts',
+  './hooks/useGameLogic.ts',
+  './hooks/useAds.ts',
+  './components/StartScreen.tsx',
+  './components/Game.tsx',
+  './components/GameBoard.tsx',
+  './components/PiecePreview.tsx',
+  './components/InfoPanel.tsx',
+  './components/Controls.tsx',
+  './components/MessageBox.tsx',
+  './components/AdBanner.tsx',
+  './manifest.json', // Now in root
+  './icon-192.png', // Now in root
+  './icon-512.png', // Now in root
   'https://cdn.tailwindcss.com',
   'https://unpkg.com/react@18.2.0/umd/react.production.min.js',
   'https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js',
