@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bloom-block-v5'; // Incremented version to force update
+const CACHE_NAME = 'bloom-block-v7'; // Incremented version to force update
 const urlsToCache = [
   './',
   './index.html',
@@ -16,9 +16,9 @@ const urlsToCache = [
   './components/Controls.tsx',
   './components/MessageBox.tsx',
   './components/AdBanner.tsx',
-  './public/manifest.json',
-  './public/icon-192.png',
-  './public/icon-512.png',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png',
   'https://cdn.tailwindcss.com',
   // NEW: Cache React and Babel scripts
   'https://unpkg.com/react@18.2.0/umd/react.production.min.js',
