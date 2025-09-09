@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bloom-block-v7'; // Incremented version to force update
+const CACHE_NAME = 'bloom-block-v8'; // Incremented version to force update
 const urlsToCache = [
   './',
   './index.html',
