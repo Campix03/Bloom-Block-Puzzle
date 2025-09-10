@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bloom-block-v32-final-solution'; // Incremented version to force update
+const CACHE_NAME = 'bloom-block-v33-final-fix'; // Incremented version to force update
 const urlsToCache = [
   './', // Cache the root
   './index.html',
@@ -16,10 +16,10 @@ const urlsToCache = [
   './components/Controls.tsx',
   './components/MessageBox.tsx',
   './components/AdBanner.tsx',
-  './components/ErrorBoundary.tsx', // Added new component to cache
-  './manifest.json', // Now in root
-  './icon-192.png', // Now in root
-  './icon-512.png', // Now in root
+  './components/ErrorBoundary.tsx',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png',
   'https://cdn.tailwindcss.com',
   'https://unpkg.com/react@18.2.0/umd/react.production.min.js',
   'https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js',
