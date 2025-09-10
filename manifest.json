@@ -1,23 +1,8 @@
 {
   "short_name": "Bloom Block",
   "name": "Bloom Block Puzzle",
-  "description": "Un cautivador juego de puzles de bloques donde colocas piezas para eliminar líneas.",
-  "icons": [
-    {
-      "src": "./icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
-    }
-  ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#4f46e5",
-  "background_color": "#3b82f6"
+  "theme_color": "#3b82f6",
+  "background_color": "#ffffff"
 }
