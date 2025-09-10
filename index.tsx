@@ -2,21 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-// Register the service worker for PWA functionality
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    // Corrected the path to point to sw.js in the root directory
-    navigator.serviceWorker.register('./sw.js').then(registration => {
-      console.log('Service Worker registered with scope:', registration.scope);
-    }).catch(error => {
-      console.error('Service Worker registration failed:', error);
-    });
-  });
-}
-
 const rootElement = document.getElementById('root');
 if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
+  throw new Error('Failed to find the root element to mount the React application.');
 }
 
 const root = ReactDOM.createRoot(rootElement);

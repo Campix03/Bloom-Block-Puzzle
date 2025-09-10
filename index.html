@@ -4,23 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bloom Block Puzzle</title>
-  <!-- Corrected paths for the new flat structure -->
-  <link rel="manifest" href="./manifest.json" />
-  <link rel="icon" href="./icon-192.png" type="image/png" />
-  <meta name="theme-color" content="#4f46e5" />
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- React and ReactDOM (Production versions) -->
-  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
   
-  <!-- Babel Standalone for live JSX/TSX transpilation -->
-  <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.min.js" crossorigin></script>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+  <meta name="theme-color" content="#4f46e5" />
 
-  <!-- Google AdSense for H5 Games Script -->
-  <!-- TODO: Reemplaza 'ca-pub-0000000000000000' con tu ID de editor de AdSense real -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
-
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Babel Standalone is still needed to transpile TSX -->
+  <script src="https://unpkg.com/@babel/standalone@7.24.0/babel.min.js"></script>
+  
+  <style>
+    /* Ensure the root div takes up the full height */
+    html, body, #root {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow: hidden; /* Prevents scrollbars on the main layout */
+    }
+  </style>
 <script type="importmap">
 {
   "imports": {
@@ -32,11 +35,10 @@
 </script>
 </head>
 <body>
-  <noscript>Necesitas habilitar JavaScript para jugar este juego.</noscript>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 
-  <!-- Load the main app script using Babel -->
-  <!-- The 'defer' attribute ensures this script runs AFTER the document is parsed, fixing the "root not found" error. -->
-  <script type="text/babel" data-type="module" src="./index.tsx" defer></script>
+  <!-- This script will now be executed reliably after the DOM is ready, thanks to the wrapper in index.tsx -->
+  <script type="text/babel" data-type="module" src="./index.tsx"></script>
 </body>
 </html>
