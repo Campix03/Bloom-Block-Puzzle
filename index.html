@@ -11,7 +11,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Babel Standalone is still needed to transpile TSX -->
+  <!-- Babel Standalone is needed to transpile TSX -->
   <script src="https://unpkg.com/@babel/standalone@7.24.0/babel.min.js"></script>
   
   <style>
@@ -35,10 +35,10 @@
 </script>
 </head>
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <noscript>Necesitas habilitar JavaScript para jugar este juego.</noscript>
   <div id="root"></div>
 
-  <!-- This script will now be executed reliably after the DOM is ready, thanks to the wrapper in index.tsx -->
+  <!-- This script will now execute because the conflicting importmap has been removed -->
   <script type="text/babel" data-type="module" src="./index.tsx"></script>
 </body>
 </html>
