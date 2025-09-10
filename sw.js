@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bloom-block-v23-final-structure-fix'; // Incremented version to force update
+const CACHE_NAME = 'bloom-block-v32-final-solution'; // Incremented version to force update
 const urlsToCache = [
   './', // Cache the root
   './index.html',
@@ -16,6 +16,7 @@ const urlsToCache = [
   './components/Controls.tsx',
   './components/MessageBox.tsx',
   './components/AdBanner.tsx',
+  './components/ErrorBoundary.tsx', // Added new component to cache
   './manifest.json', // Now in root
   './icon-192.png', // Now in root
   './icon-512.png', // Now in root

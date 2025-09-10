@@ -7,6 +7,7 @@ import InfoPanel from './InfoPanel';
 import Controls from './Controls';
 import MessageBox from './MessageBox';
 import AdBanner from './AdBanner';
+import ErrorBoundary from './ErrorBoundary'; // Import the Error Boundary
 import { Piece } from '../types';
 
 interface GameProps {
@@ -116,8 +117,8 @@ const Game: React.FC<GameProps> = ({ onGoHome }) => {
     return () => {
       window.removeEventListener('mousemove', handleDragMove);
       window.removeEventListener('touchmove', handleDragMove);
-      window.removeEventListener('mouseup', handleDragEnd);
-      window.removeEventListener('touchend', handleDragEnd);
+      window.addEventListener('mouseup', handleDragEnd);
+      window.addEventListener('touchend', handleDragEnd);
     };
   }, [draggedItem, handleDragMove, handleDragEnd]);
 
@@ -165,7 +166,9 @@ const Game: React.FC<GameProps> = ({ onGoHome }) => {
           shufflesLeft={shufflesLeft}
           isGameOver={isGameOver}
         />
-         <AdBanner />
+        <ErrorBoundary>
+          <AdBanner />
+        </ErrorBoundary>
       </div>
 
       {message && (
